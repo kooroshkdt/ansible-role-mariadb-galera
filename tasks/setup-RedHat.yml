@@ -16,3 +16,12 @@
     state: installed
   with_items:
     - "{{ __mariadb_packages }}"
+- name: "[CentOS] Ensure MariaDB packages are installed."
+  yum:
+    name: "firewalld"
+    state: installed
+- name: Enable firewalld
+  service: name=firewalld state=started enabled=yes
+  - name: openfirewalld ports for galera
+  when: install_muninnode|default(True)
+  command: firewall-cmd --permanent --zone=dmz --add-rich-rule='rule family="ipv4" source address="{{ item }}/32" port port=4949 protocol="tcp" accept'
