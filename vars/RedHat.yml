@@ -1,6 +1,6 @@
 # vars file RedHat.yml
 
-mariadb_daemon: mariadb
+mariadb_daemon: mysql
 __mariadb_packages:
   - mariadb-galera-server
   - MySQL-python
