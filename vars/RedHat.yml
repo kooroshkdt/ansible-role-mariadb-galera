@@ -2,7 +2,7 @@
 
 mariadb_daemon: mariadb
 __mariadb_packages:
-  - mariadb-galera-server
+  - MariaDB-Galera-server
   - MySQL-python
   - rsync
   - xinetd
